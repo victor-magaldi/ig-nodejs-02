@@ -4,13 +4,13 @@
 // educator
 interface Course{
     name:string,
-    duration:number, 
+    duration?:number, 
     educator:string
 }
 
 class CreateCourseService{
     execute(data:Course){
-        const {name, duration, educator} = data
+        const {name, duration=8, educator} = data
         console.log(name, duration, educator)
     }
 }
