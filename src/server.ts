@@ -3,6 +3,8 @@ import { createCourse } from "./routes";
 
 const app = express();
 
-app.get("/", createCourse);
+app.get("/", (req, res) => {
+    return res.json({ ping: true })
+})
 
 app.listen(3333);
