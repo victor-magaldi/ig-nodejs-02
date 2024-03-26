@@ -4,6 +4,7 @@ import { createCourse } from "./routes";
 const app = express();
 
 app.get("/", (req, res) => {
+    const a = 5
     return res.json({ ping: true })
 })
 
