@@ -1,11 +1,9 @@
 import express from "express";
-import { createCourse } from "./routes";
+import { categoriesRoutes } from "./routes/categories.routes";
 
 const app = express();
+app.use(express.json())
 
-app.get("/", (req, res) => {
-    const a = 5
-    return res.json({ ping: true })
-})
+app.use(categoriesRoutes)
 
 app.listen(3333);
