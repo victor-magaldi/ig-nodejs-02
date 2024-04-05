@@ -10,7 +10,6 @@ class CreateCategoryService {
   constructor(private categoriesRepository: ICategoryRepository) {
   }
   execute({ description, name }: IRequest) {
-    console.log("this.categoriesRepository", this.categoriesRepository)
     const categoryAlreadyExist = this.categoriesRepository.findByName(name)
 
     if (categoryAlreadyExist) {
