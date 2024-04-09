@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { parse as csvParse } from "csv-parse";
 import { ImportCategoriesUseCase } from "./ImportCategoriesUseCase";
 
 class ImportCategoriesController {
