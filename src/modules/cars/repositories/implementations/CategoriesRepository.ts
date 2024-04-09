@@ -1,5 +1,5 @@
-import { Category } from "../model/Category";
-import { ICategoryRepository, ICreateCategoryDTO } from "./ICategoriesRepository";
+import { Category } from "../../model/Category";
+import { ICategoryRepository, ICreateCategoryDTO } from "../interfaces/ICategoriesRepository";
 
 // Singleton =>Criação de uma instância global
 
