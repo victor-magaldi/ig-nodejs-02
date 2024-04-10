@@ -9,7 +9,7 @@ interface ImportCategory {
 }
 
 class ImportCategoriesUseCase {
-  constructor(private categoriesRepository: ICategoryRepository) {}
+  constructor(private categoriesRepository: ICategoryRepository) { }
 
   loadCategories(file: Express.Multer.File): Promise<ImportCategory[]> {
     return new Promise((resolve, reject) => {
@@ -28,6 +28,7 @@ class ImportCategoriesUseCase {
           });
         })
         .on("end", () => {
+          fs.promises.unlink(file.path)
           resolve(categories);
         })
         .on("error", (err) => {
