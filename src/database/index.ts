@@ -6,6 +6,7 @@ const dataSource = new DataSource({
   username: "docker",
   password: "ignite",
   database: "rentx",
+  host: "database_ignite",
   entities: [
     // Category,
     // ...
@@ -23,3 +24,5 @@ dataSource.initialize()
   .catch((err) => {
     console.error("Error during Data Source initialization", err)
   })
+
+export { dataSource }
