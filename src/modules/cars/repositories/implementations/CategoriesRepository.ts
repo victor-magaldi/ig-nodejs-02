@@ -9,17 +9,10 @@ import { Repository } from "typeorm";
 
 class CategoriesRepository implements ICategoryRepository {
   private repository: Repository<Category>
-
   // private static INSTANCE: CategoriesRepository;
 
   public constructor() {
-    console.log("estanciou?")
-    try {
-      this.repository = dataSource.manager.getRepository(Category)
-
-    } catch (error) {
-      console.log("errror aquiiiii=> ", error)
-    }
+    this.repository = dataSource.manager.getRepository(Category)
   }
 
   // public static getInstance(): CategoriesRepository {
