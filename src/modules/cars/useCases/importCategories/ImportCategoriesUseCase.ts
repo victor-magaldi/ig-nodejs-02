@@ -44,11 +44,11 @@ class ImportCategoriesUseCase {
   }
   async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file);
-
-    categories.forEach((category) => {
+    console.log("cateogiressssss===>", categories);
+    categories.forEach(async (category) => {
       const { name, description } = category;
-      const hasCategory = this.categoriesRepository.findByName(name);
-
+      const hasCategory = await this.categoriesRepository.findByName(name);
+      console.log(hasCategory);
       if (!hasCategory) {
         this.categoriesRepository.create({
           name,
