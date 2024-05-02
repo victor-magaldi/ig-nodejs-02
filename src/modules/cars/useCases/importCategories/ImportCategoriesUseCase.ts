@@ -26,6 +26,7 @@ class ImportCategoriesUseCase {
 
       parseFile
         .on("data", async (line) => {
+          console.log("lineeeeeeeeeee==========>", line);
           const [name, description] = line;
           categories.push({
             name,
