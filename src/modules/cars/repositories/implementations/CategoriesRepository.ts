@@ -8,11 +8,11 @@ import { Repository } from "typeorm";
 // Singleton =>Criação de uma instância global
 
 class CategoriesRepository implements ICategoryRepository {
-  private repository: Repository<Category>
+  private repository: Repository<Category>;
   // private static INSTANCE: CategoriesRepository;
 
   public constructor() {
-    this.repository = dataSource.manager.getRepository(Category)
+    this.repository = dataSource.manager.getRepository(Category);
   }
 
   // public static getInstance(): CategoriesRepository {
@@ -27,16 +27,16 @@ class CategoriesRepository implements ICategoryRepository {
       id: uuidv4(),
       description,
       name,
-    })
+    });
 
     await this.repository.save(category);
   }
   async list(): Promise<Category[]> {
-    const categories = await this.repository.find()
-    return categories
+    const categories = await this.repository.find();
+    return categories;
   }
   async findByName(name: string): Promise<Category> {
-    const category = await this.repository.findOne({ where: { name } })
+    const category = await this.repository.findOne({ where: { name } });
     return category;
   }
 }

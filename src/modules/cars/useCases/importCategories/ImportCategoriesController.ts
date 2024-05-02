@@ -1,13 +1,14 @@
 import { Request, Response } from "express";
 import { parse as csvParse } from "csv-parse";
 import { ImportCategoriesUseCase } from "./ImportCategoriesUseCase";
+import { container } from "tsyringe";
 
 class ImportCategoriesController {
-  constructor(private importCategoriesUseCase: ImportCategoriesUseCase) {}
   handle(request: Request, response: Response): Response {
     const { file } = request;
+    const importCategoriesUseCase = container.resolve(ImportCategoriesUseCase);
 
-    this.importCategoriesUseCase.execute(file);
+    importCategoriesUseCase.execute(file);
 
     return response.send();
   }
