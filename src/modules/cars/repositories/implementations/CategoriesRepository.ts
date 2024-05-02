@@ -28,7 +28,7 @@ class CategoriesRepository implements ICategoryRepository {
       description,
       name,
     });
-    console.log("-------------", category);
+
     await this.repository.save(category);
   }
   async list(): Promise<Category[]> {
