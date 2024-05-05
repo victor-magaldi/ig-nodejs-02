@@ -2,6 +2,7 @@ import { DataSource } from "typeorm";
 import { CreateCategories1713571344655 } from "./migrations/1713571344655-CreateCategories";
 import { Category } from "../modules/cars/entities/Category";
 import { CreateSpecifications1714868097352 } from "./migrations/1714868097352-CreateSpecifications";
+import { Specification } from "../modules/cars/entities/Specification";
 
 const dataSource = new DataSource({
   type: "postgres",
@@ -10,7 +11,7 @@ const dataSource = new DataSource({
   password: "ignite",
   database: "rentx",
   host: "database_ignite", //localhost
-  entities: [Category],
+  entities: [Category, Specification],
   migrations: ["src/database/migrations/*{.ts,.js}"],
 });
 
