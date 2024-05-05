@@ -3,13 +3,10 @@ import { CreateSpecificationController } from "../modules/cars/useCases/createSp
 
 const specificationsRoutes = Router();
 
-const createSpecificationControlle = new CreateSpecificationController();
+const createSpecificationController = new CreateSpecificationController();
 
-specificationsRoutes.post("/", createSpecificationControlle.handle);
+specificationsRoutes.post("/", createSpecificationController.handle);
 
-// specificationsRoutes.get("/", (request, response) => {
-//   const allspecifications = specificationsRepository.list();
-//   return response.json(allspecifications);
-// });
+specificationsRoutes.get("/", );
 
 export { specificationsRoutes };
