@@ -20,6 +20,7 @@ class UserRepository implements IUsersRepository {
       where: {
         email,
       },
+      select: ["email", "name", "password"],
     });
 
     return user;
