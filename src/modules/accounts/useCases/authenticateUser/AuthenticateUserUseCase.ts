@@ -35,7 +35,6 @@ class AuthenticateUserUseCase {
       throw new Error("Email or password incorrect!");
     }
     //generate token
-    console.log("user.id", user.id);
     const token = sign({}, "5729c7e26108b3e23b961bb04b17f45e", {
       subject: user.id,
       expiresIn: "1d",

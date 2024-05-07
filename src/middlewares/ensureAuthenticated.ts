@@ -19,10 +19,8 @@ export async function ensureAuthenticated(
   const [, token] = authHeader.split(" ");
   try {
     const { sub: userId } = verify(token, "5729c7e26108b3e23b961bb04b17f45e") as IPayload;
-    console.log("sub", userId);
     const userRepository = new UserRepository();
     const user = await userRepository.findById(userId);
-    console.log("USER", user);
     if (!user) {
       throw new Error("User does not exists");
     }
