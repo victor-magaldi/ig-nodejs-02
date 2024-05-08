@@ -10,8 +10,15 @@ class UserRepository implements IUsersRepository {
   constructor() {
     this.repository = dataSource.manager.getRepository(User);
   }
-  async create({ name, email, driver_license, password }: ICreateUsersDTO): Promise<void> {
-    const user = this.repository.create({ name, email, driver_license, password });
+  async create({
+    name,
+    email,
+    driver_license,
+    password,
+    id,
+    avatar,
+  }: ICreateUsersDTO): Promise<void> {
+    const user = this.repository.create({ name, email, driver_license, password, id, avatar });
 
     await this.repository.save(user);
   }

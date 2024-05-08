@@ -14,8 +14,7 @@ class UpdateUserAvatarUseCase {
   ) {}
   async execute({ user_id, avatar_file }: IRequest): Promise<void> {
     const user = await this.userRepository.findById(user_id);
-    //adicionar coluna avatar na tabela user
-    //configurar upload no multer
+    console.log("userBD UpdateUserAvatarUseCase", user);
     user.avatar = avatar_file;
 
     await this.userRepository.create(user);
