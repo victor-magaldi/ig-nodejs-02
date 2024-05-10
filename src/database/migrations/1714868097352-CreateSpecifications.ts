@@ -1,6 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-console.log("Lendo SPECIFICATION");
 export class CreateSpecifications1714868097352 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     try {
