@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { dataSource } from "../../../../database";
-import { Category } from "../../entities/Category";
+import { Category } from "../../infra/typorm/entities/Category";
 import { ICategoryRepository, ICreateCategoryDTO } from "../interfaces/ICategoriesRepository";
 
 import { Repository } from "typeorm";

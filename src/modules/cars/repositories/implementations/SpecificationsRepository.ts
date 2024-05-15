@@ -1,6 +1,6 @@
 import { Repository } from "typeorm";
 import { v4 as uuidv4 } from "uuid";
-import { Specification } from "../../entities/Specification";
+import { Specification } from "../../infra/typorm/entities/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
