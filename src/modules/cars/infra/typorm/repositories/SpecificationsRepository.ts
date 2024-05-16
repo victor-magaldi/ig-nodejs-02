@@ -1,11 +1,13 @@
-import { Repository } from "typeorm";
 import { v4 as uuidv4 } from "uuid";
-import { Specification } from "../../infra/typorm/entities/Specification";
+import { Repository } from "typeorm";
+
+import { dataSource } from "@shared/infra/typeorm";
+
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
-} from "../interfaces/ISpecificationsRepository";
-import { dataSource } from "../../../../database";
+} from "@modules/cars/repositories/interfaces/ISpecificationsRepository";
+import { Specification } from "../entities/Specification";
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>;

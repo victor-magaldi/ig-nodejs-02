@@ -1,9 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
-import { dataSource } from "../../../../database";
-import { Category } from "../../infra/typorm/entities/Category";
-import { ICategoryRepository, ICreateCategoryDTO } from "../interfaces/ICategoriesRepository";
-
 import { Repository } from "typeorm";
+
+import { dataSource } from "@shared/infra/typeorm";
+import {
+  ICategoryRepository,
+  ICreateCategoryDTO,
+} from "@modules/cars/repositories/interfaces/ICategoriesRepository";
+import { Category } from "../entities/Category";
 
 // Singleton =>Criação de uma instância global
 
