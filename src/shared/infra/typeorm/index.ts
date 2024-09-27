@@ -7,8 +7,8 @@ const dataSource = new DataSource({
   password: "ignite",
   database: "rentx",
   host: "database_ignite", //localhost
-  entities: ["src/modules/cars/entities/*{.ts,.js}", "src/modules/accounts/entities/*{.ts,.js}"],
-  migrations: ["src/database/migrations/*{.ts,.js}"],
+  entities: ["src/modules/**/entities/*{.ts,.js}", "src/modules/**/entities/*{.ts,.js}"],
+  migrations: ["src/shared/infra/typeorm/migrations/*{.ts,.js}"],
 });
 
 dataSource
