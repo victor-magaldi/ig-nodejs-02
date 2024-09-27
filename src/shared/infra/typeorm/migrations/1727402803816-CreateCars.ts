@@ -44,7 +44,7 @@ export class CreateCars1727402803816 implements MigrationInterface {
             {
               name: "category_id",
               type: "uuid",
-              isNullable: false,
+              isNullable: true,
             },
             {
               name: "created_at",
@@ -58,8 +58,8 @@ export class CreateCars1727402803816 implements MigrationInterface {
               referencedTableName: "categories",
               referencedColumnNames: ["id"],
               columnNames: ["category_id"],
-              onDelete: "SET_NULL",
-              onUpdate: "SET_NULL",
+              onDelete: "SET NULL",
+              onUpdate: "SET NULL",
             },
           ],
         }),
