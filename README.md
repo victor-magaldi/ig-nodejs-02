@@ -58,7 +58,7 @@ Edit File Migration created implementing methods UP and Down
 
 ### Revert Migration
 ```bash
-npx typeorm-ts-node-commonjs migration:revert -d ./src/database/index.ts 
+npx typeorm-ts-node-commonjs migration:revert -d ./src/shared/infra/typeorm/index.ts
 ```
 
 
