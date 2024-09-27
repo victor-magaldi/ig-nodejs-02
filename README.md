@@ -46,14 +46,14 @@ or
 - Create Migration file 
 Example:My migration name is CreateSpecifications
 ```bash
- yarn migration:create ./src/database/migrations/CreateSpecifications
+ yarn migration:create ./src/shared/infra/typeorm/migrations/CreateCars
 ```
 Edit File Migration created implementing methods UP and Down
 
 
 ### Run Migration
 ```bash
- npx typeorm-ts-node-commonjs migration:run -d ./src/database/index.ts 
+ npx typeorm-ts-node-commonjs migration:run -d ./src/shared/infra/typeorm/index.ts     
 ```
 
 ### Revert Migration
