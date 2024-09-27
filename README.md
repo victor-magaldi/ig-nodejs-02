@@ -61,6 +61,7 @@ Edit File Migration created implementing methods UP and Down
 npx typeorm-ts-node-commonjs migration:revert -d ./src/database/index.ts 
 ```
 
+
 ## Cadastro de carro
 
 ### Requisitos Funcionais - RF
@@ -76,7 +77,7 @@ npx typeorm-ts-node-commonjs migration:revert -d ./src/database/index.ts
 ### Requisitos Não Funcionais - RNF
 
 
-## Listage de carros
+## Listagem de carros
 
 ### Requisitos Funcionais - RF
 - Deve ser possível listar todos os carros disponíveis.
@@ -87,6 +88,36 @@ npx typeorm-ts-node-commonjs migration:revert -d ./src/database/index.ts
 ## Cadastro de Especificação no carros
 ### Requisitos Funcionais - RF
 - Deve ser possível cadastrar uma especificação para um carro.
+- Deve ser possível listar todas as especificaçoes  
+- Deve ser possível listar todos os carros
+
 
 ### Regras de Negócio - RN
-- Só será possível cadastrar especificação para um carro cadastrado.
+- Não deve ser possível cadastar uma especificação para um carro não cadastrado
+- Não deve ser possível cadastar uma especificação já existente para o mesmo carro
+- O usuário responsável pelo cadastro deve ser um usuário administrador
+
+## Cadastro de Imagem do carro
+### Requisitos Funcionais - RF
+- Deve ser possível cadastrar a imagem do carro
+
+### Requisitos Não Funcionais - RNF
+- Utilizar o multer para upload dos arquivos
+
+
+### Regras de Negócio - RN
+- Usuário deve poder cadastrar mais de uma imagem para o mesmo carro
+- O usuário responsável pelo cadastro deve ser um usuário administrador.
+
+
+## Aluguel do Carro 
+### Requisitos Funcionais - RF
+- Deve ser possível cadastrar um aluguel
+
+### Requisitos Não Funcionais - RNF
+- 
+
+
+### Regras de Negócio - RN
+- Aluguel duração mínima 24 horas
+- Não deve ser possíve cadastrar um aluguel caso já exista um aluguel aberto
