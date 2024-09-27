@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { Category } from "../../infra/typorm/entities/Category";
+import { Category } from "../../infra/typeorm/entities/Category";
 import { ICategoryRepository, ICreateCategoryDTO } from "../interfaces/ICategoriesRepository";
 
 class CategoriesRepositoryInMemory implements ICategoryRepository {

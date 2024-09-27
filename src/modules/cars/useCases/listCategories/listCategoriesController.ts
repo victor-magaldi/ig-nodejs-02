@@ -4,6 +4,7 @@ import { container } from "tsyringe";
 
 class ListCategoriesController {
   async handle(request: Request, response: Response): Promise<Response> {
+    console.log("teste");
     const listCategoriesUseCase = container.resolve(ListCategoriesUseCase);
     const all = await listCategoriesUseCase.execute();
 
